@@ -1,5 +1,7 @@
 ﻿using AtTime.Core.Enums;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AtTime.Core.Models
@@ -25,5 +27,7 @@ namespace AtTime.Core.Models
         public UserRole Role { get; set; }
         
         public string RoleName { get => Enum.GetName(Role); }
+
+        public IEnumerable<Point> Points { get; set; }
     }
 }

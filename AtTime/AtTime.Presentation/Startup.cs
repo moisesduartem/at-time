@@ -23,7 +23,7 @@ namespace AtTime.Presentation
         {
             services.AddCors();
             services.AddJwtAuthentication(Configuration);
-            services.AddConfiguration();
+            services.AddConfiguration(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
