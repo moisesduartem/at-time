@@ -25,9 +25,9 @@ namespace AtTime.Presentation.Controllers
         [Route("login")]
         public async Task<ActionResult<LoginViewModel>> Authenticate([FromBody] LoginInputModel input)
         {
-            var user = await _userRepository.Get(input.Email, input.Password);
+            var user = await _userRepository.GetByEmail(input.Email);
 
-            if (user == null)
+            if (user == null || !BCrypt.Net.BCrypt.Verify(input.Password, user.Password))
                 return NotFound(new { Message = "Invalid email and/or password" });
 
             var token = _tokenService.GenerateToken(user.FullName, user.RoleName);

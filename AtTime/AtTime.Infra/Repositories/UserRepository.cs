@@ -15,10 +15,10 @@ namespace AtTime.Infra.Repositories
             _context = context;
         }
 
-        public async Task<User> Get(string email, string password)
+        public async Task<User> GetByEmail(string email)
         {
             return await _context.Users.AsNoTracking()
-                                       .Where(x => x.Email.ToLower() == email.ToLower() && x.Password == password)
+                                       .Where(x => x.Email.ToLower() == email.ToLower())
                                        .FirstOrDefaultAsync();
         }
         
