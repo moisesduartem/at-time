@@ -1,5 +1,6 @@
 ﻿using AtTime.Core.Models;
-using System.Collections.Generic;
+using AtTime.Infra.Database;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,23 +8,23 @@ namespace AtTime.Infra.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly IEnumerable<User> _users;
+        private readonly DataContext _context;
 
-        public UserRepository()
+        public UserRepository(DataContext context)
         {
-            _users = new List<User> { new User { Id = 1, Email = "user@user", FullName = "Paul McCartney", Password = "123456" } };
+            _context = context;
         }
 
-        public Task<User> Get(string email, string password)
+        public async Task<User> Get(string email, string password)
         {
-            var result = _users.Where(x => x.Email.ToLower() == email.ToLower() && x.Password == password).FirstOrDefault();
-            return Task.FromResult(result);
+            return await _context.Users.AsNoTracking()
+                                       .Where(x => x.Email.ToLower() == email.ToLower() && x.Password == password)
+                                       .FirstOrDefaultAsync();
         }
         
-        public Task<User> GetByName(string name)
+        public async Task<User> GetByName(string name)
         {
-            var result = _users.Where(x => x.FullName.ToLower() == name.ToLower()).FirstOrDefault();
-            return Task.FromResult(result);
+            return await _context.Users.AsNoTracking().Where(x => x.FullName.ToLower() == name.ToLower()).FirstOrDefaultAsync();
         }
     }
 }
