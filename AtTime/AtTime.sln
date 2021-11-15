@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtTime.Presentation", "AtTi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtTime.Core", "AtTime.Core\AtTime.Core.csproj", "{3646FE4A-FA67-4ED1-92FC-451C5A858723}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtTime.Infra", "AtTime.Infra\AtTime.Infra.csproj", "{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3646FE4A-FA67-4ED1-92FC-451C5A858723}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3646FE4A-FA67-4ED1-92FC-451C5A858723}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3646FE4A-FA67-4ED1-92FC-451C5A858723}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
