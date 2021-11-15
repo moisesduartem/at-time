@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AtTime.Core.Enums;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AtTime.Core.Models
 {
@@ -18,5 +20,10 @@ namespace AtTime.Core.Models
         
         [Required]
         public string Password { get; set; }
+
+        [Required]
+        public UserRole Role { get; set; }
+        
+        public string RoleName { get => Enum.GetName(Role); }
     }
 }

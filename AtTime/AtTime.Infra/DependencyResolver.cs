@@ -1,4 +1,5 @@
 ﻿using AtTime.Infra.Database;
+using AtTime.Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +15,7 @@ namespace AtTime.Infra
 
         private static void AddDependencyInjection(IServiceCollection services)
         {
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<DataContext, DataContext>();
         }
         

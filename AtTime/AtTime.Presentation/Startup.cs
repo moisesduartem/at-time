@@ -1,4 +1,5 @@
 using AtTime.Infra;
+using AtTime.JwtAuthentication.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,8 @@ namespace AtTime.Presentation
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+            services.AddJwtAuthentication(Configuration);
             services.AddConfiguration();
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -40,6 +43,10 @@ namespace AtTime.Presentation
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

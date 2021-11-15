@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtTime.Presentation", "AtTime.Presentation\AtTime.Presentation.csproj", "{B8613DD6-58E2-4D07-878A-B270D9DAF46E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtTime.Presentation", "AtTime.Presentation\AtTime.Presentation.csproj", "{B8613DD6-58E2-4D07-878A-B270D9DAF46E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtTime.Core", "AtTime.Core\AtTime.Core.csproj", "{3646FE4A-FA67-4ED1-92FC-451C5A858723}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtTime.Core", "AtTime.Core\AtTime.Core.csproj", "{3646FE4A-FA67-4ED1-92FC-451C5A858723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtTime.Infra", "AtTime.Infra\AtTime.Infra.csproj", "{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtTime.Infra", "AtTime.Infra\AtTime.Infra.csproj", "{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtTime.JwtAuthentication", "AtTime.JwtAuthentication\AtTime.JwtAuthentication.csproj", "{34355689-06BB-48F7-892F-7328B13BAA99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D9D5B29-3B7C-4BDE-82EF-DE136CB55F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34355689-06BB-48F7-892F-7328B13BAA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34355689-06BB-48F7-892F-7328B13BAA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34355689-06BB-48F7-892F-7328B13BAA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34355689-06BB-48F7-892F-7328B13BAA99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

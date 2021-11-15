@@ -9,7 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\AtTime.Infra\AtTime.Infra.csproj" />
+    <ProjectReference Include="..\AtTime.JwtAuthentication\AtTime.JwtAuthentication.csproj" />
   </ItemGroup>
 
 </Project>
