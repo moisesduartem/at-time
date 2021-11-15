@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AtTime.Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211115200542_CreatePointsAndUsersTable")]
-    partial class CreatePointsAndUsersTable
+    [Migration("20211115203822_CreatePointsAndUsersTables")]
+    partial class CreatePointsAndUsersTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,7 +38,7 @@ namespace AtTime.Infra.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.ToTable("Point");
+                    b.ToTable("Points");
                 });
 
             modelBuilder.Entity("AtTime.Core.Models.User", b =>

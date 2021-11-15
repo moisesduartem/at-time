@@ -36,7 +36,7 @@ namespace AtTime.Infra.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.ToTable("Point");
+                    b.ToTable("Points");
                 });
 
             modelBuilder.Entity("AtTime.Core.Models.User", b =>

@@ -24,7 +24,9 @@ namespace AtTime.Presentation
             services.AddCors();
             services.AddJwtAuthentication(Configuration);
             services.AddConfiguration(Configuration);
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options => 
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AtTime.Presentation", Version = "v1" });

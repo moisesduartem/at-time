@@ -8,9 +8,20 @@ namespace AtTime.Core.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public DateTime Time { get; set; }
+        public DateTime Time { get;set; }
         [Required]
         public int AuthorId { get; set; }
         public User Author { get; set; }
+
+        public Point(DateTime time, int authorId)
+        {
+            Time = time;
+            AuthorId = authorId;
+        }
+
+        public Point()
+        {
+
+        }
     }
 }

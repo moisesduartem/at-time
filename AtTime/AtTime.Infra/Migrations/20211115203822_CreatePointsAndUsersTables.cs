@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AtTime.Infra.Migrations
 {
-    public partial class CreatePointsAndUsersTable : Migration
+    public partial class CreatePointsAndUsersTables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -24,7 +24,7 @@ namespace AtTime.Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Point",
+                name: "Points",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -34,9 +34,9 @@ namespace AtTime.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Point", x => x.Id);
+                    table.PrimaryKey("PK_Points", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Point_Users_AuthorId",
+                        name: "FK_Points_Users_AuthorId",
                         column: x => x.AuthorId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -44,15 +44,15 @@ namespace AtTime.Infra.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Point_AuthorId",
-                table: "Point",
+                name: "IX_Points_AuthorId",
+                table: "Points",
                 column: "AuthorId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Point");
+                name: "Points");
 
             migrationBuilder.DropTable(
                 name: "Users");

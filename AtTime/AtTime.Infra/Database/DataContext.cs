@@ -6,6 +6,7 @@ namespace AtTime.Infra.Database
     public class DataContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Point> Points { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }
