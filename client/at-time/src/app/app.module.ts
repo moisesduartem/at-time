@@ -6,10 +6,14 @@ import { ButtonModule } from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { MePageComponent } from './pages/me-page/me-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginPageComponent,
+    MePageComponent
   ],
   imports: [
     BrowserModule,
