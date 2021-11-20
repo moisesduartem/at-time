@@ -6,7 +6,7 @@ import { MePageComponent } from './pages/me-page/me-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginPageComponent },
+  { path: 'login', component: LoginPageComponent, canActivate: [AuthGuard] },
   { path: 'me', component: MePageComponent, canActivate: [AuthGuard] }
 ];
 

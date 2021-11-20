@@ -28,7 +28,14 @@ export class AuthService {
       .subscribe((response: any) => {
         localStorage.setItem('at-time:token', response.token);
         localStorage.setItem('at-time:user', JSON.stringify(response.user));
+        this.router.navigate(['me']);
       })
+  }
+
+  public signOut(): void {
+    localStorage.removeItem('at-time:token');
+    localStorage.removeItem('at-time:user');
+    this.router.navigate(['login']);
   }
 
   public get authenticatedUser(): User | null {
@@ -44,7 +51,7 @@ export class AuthService {
   }
 
   public get isLoggedIn(): boolean {
-    return Boolean(this.token);
+    return !!this.token && !!this.authenticatedUser;
   }
 
   private handleError(error: HttpErrorResponse) {
