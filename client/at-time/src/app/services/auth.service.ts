@@ -5,29 +5,29 @@ import { User } from '../models/user.model';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { LoginRequest } from '../requests/login.request';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  public endpoint = 'http://localhost:5001/auth';
+  public endpoint = `${environment.apiUrl}/auth`;
   public headers = new HttpHeaders().set('Content-Type', 'application/json');
-  public currentUser = {};
 
   constructor(private http: HttpClient, public router: Router) { }
 
   public signUp(user: User): Observable<any> {
-    return this.http.post(this.endpoint + '/auth/register', user).pipe(
+    return this.http.post(this.endpoint + '/register', user).pipe(
       catchError(this.handleError)
     );
   }
 
   public signIn(body: LoginRequest) {
-    return this.http.post(this.endpoint + '/auth/login', body)
+    return this.http.post(this.endpoint + '/login', body)
       .subscribe((response: any) => {
         localStorage.setItem('at-time:token', response.token);
-        localStorage.setItem('at-time:user', response.user);
+        localStorage.setItem('at-time:user', JSON.stringify(response.user));
       })
   }
 
