@@ -1,15 +1,24 @@
-<div>
-    <form class="p-d-flex p-flex-column" [formGroup]="signInForm" (ngSubmit)="signIn()">
-        <div class="p-field">
-            <p>Email</p>
-            <input type="email" formControlName="email" pInputText required>
-        </div>
+<div class="page-content p-d-flex p-jc-center p-ai-center">
+    <p-card>
+        <form class="p-d-flex p-mx-3 p-flex-column" [formGroup]="signInForm" (ngSubmit)="signIn()">
+            <div class="p-field">
+                <p>Email</p>
+                <span class="p-input-icon-right">
+                    <input type="email" formControlName="email" pInputText required>
+                </span>
+            </div>
 
-        <div class="p-field">
-            <p>Password</p>
-            <input type="password" formControlName="email" pInputText required>
-        </div>
+            <div class="p-field">
+                <p>Password</p>
+                <span class="p-input-icon-right">
+                    <i [class]="passwordIconClass" (click)="toggleShowPassword()"></i>
+                    <input [type]="passwordInputType" formControlName="email" pInputText required>
+                </span>
+            </div>
 
-        <p-button type="submit">Enter</p-button>
-    </form>
+            <div class="p-mt-3 p-d-flex p-jc-center p-ai-center">
+                <button pButton type="submit" label="Enter" class="p-button-lg"></button>
+            </div>
+        </form>
+    </p-card>
 </div>

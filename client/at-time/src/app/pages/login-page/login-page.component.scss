@@ -1,0 +1,13 @@
+.p-button {
+    width: 100%;
+}
+
+.password-input-icon {
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+    &:hover {
+        opacity: 1;
+    }
+}

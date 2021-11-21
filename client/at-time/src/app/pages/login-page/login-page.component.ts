@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPageComponent implements OnInit {
   public signInForm: FormGroup;
+  public mustShowPassword: boolean = false;
 
   public constructor(
     public formBuilder: FormBuilder,
@@ -28,4 +29,16 @@ export class LoginPageComponent implements OnInit {
     this.authService.signIn(this.signInForm.value);
   }
 
+  public toggleShowPassword(): void {
+    this.mustShowPassword = !this.mustShowPassword;
+  }
+
+  public get passwordInputType(): string {
+    return this.mustShowPassword ? 'text' : 'password';
+  }
+
+  public get passwordIconClass(): string {
+    const defaultClass = 'password-input-icon pi pi-eye';
+    return this.mustShowPassword ? (defaultClass + '-slash') : defaultClass;
+  }
 }

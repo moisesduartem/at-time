@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { InputTextModule } from 'primeng/inputtext';
+import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    CardModule
   ],
   providers: [
     {
