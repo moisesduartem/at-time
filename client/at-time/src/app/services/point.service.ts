@@ -19,4 +19,8 @@ export class PointService {
   public getUserLastPoint() {
     return this.http.get(`${this.endpoint}/last`);
   }
+
+  public getTodayPoints() {
+    return this.http.get(`${this.endpoint}/today`);
+  }
 }

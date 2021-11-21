@@ -7,6 +7,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
+import { TableModule } from 'primeng/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RippleModule } from 'primeng/ripple';
 import { HeaderComponent } from './components/header/header.component';
 import { RegisterPointPageComponent } from './pages/points/register-point-page/register-point-page.component';
+import { TodayPointsPageComponent } from './pages/points/today-points-page/today-points-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { RegisterPointPageComponent } from './pages/points/register-point-page/r
     LoginPageComponent,
     MePageComponent,
     HeaderComponent,
-    RegisterPointPageComponent
+    RegisterPointPageComponent,
+    TodayPointsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { RegisterPointPageComponent } from './pages/points/register-point-page/r
     MenubarModule,
     InputTextModule,
     ButtonModule,
-    CardModule
+    CardModule,
+    TableModule
   ],
   providers: [
     {

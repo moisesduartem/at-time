@@ -22,6 +22,10 @@ export class HeaderComponent implements OnInit {
           {
             label: 'Register',
             routerLink: ['/points/register']
+          },
+          {
+            label: 'Today',
+            routerLink: ['/points/today']
           }
         ]
       },

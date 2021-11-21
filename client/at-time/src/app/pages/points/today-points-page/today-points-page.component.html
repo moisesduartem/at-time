@@ -1,0 +1,16 @@
+<p-card header="Today Points">
+    <p-table [value]="points" styleClass="p-datatable-striped" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Time</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-point>
+            <tr>
+                <td>{{point.id}}</td>
+                <td>{{point.justTime}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-card>

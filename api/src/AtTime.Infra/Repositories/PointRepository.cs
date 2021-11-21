@@ -27,6 +27,7 @@ namespace AtTime.Infra.Repositories
         {
             return await _context.Points.AsNoTracking()
                                         .Where(x => x.AuthorId == userId && x.Time.Date == DateTime.Today)
+                                        .OrderByDescending(x => x.Time)
                                         .ToListAsync();
         }
 

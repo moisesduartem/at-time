@@ -13,6 +13,10 @@ export class Point {
         this.author = data.author;
     }
 
+    public get justTime(): string {
+        return this.time.toLocaleTimeString();
+    }
+
     public toString() {
         return this.time.toLocaleString();
     }
