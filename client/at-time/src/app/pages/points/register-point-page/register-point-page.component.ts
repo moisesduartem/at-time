@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PointService } from 'src/app/services/point.service';
 
 @Component({
   selector: 'app-register-point-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPointPageComponent implements OnInit {
 
-  public constructor() { }
+  public constructor(
+    private pointService: PointService
+  ) { }
 
   public ngOnInit(): void {
+  }
+
+  public registerPoint(): void {
+    this.pointService.register();
   }
 
 }
