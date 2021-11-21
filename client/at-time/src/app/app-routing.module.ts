@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MePageComponent } from './pages/me-page/me-page.component';
+import { RegisterPointPageComponent } from './pages/points/register-point-page/register-point-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginPageComponent, canActivate: [AuthGuard] },
-  { path: 'me', component: MePageComponent, canActivate: [AuthGuard] }
+  { path: 'me', component: MePageComponent, canActivate: [AuthGuard] },
+  { path: 'points/register', component: RegisterPointPageComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

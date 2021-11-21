@@ -33,7 +33,7 @@ namespace AtTime.Presentation.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<Point>> MakePoint()
+        public async Task<ActionResult<Point>> Register()
         {
             var author = await _userRepository.GetByName(User.Identity.Name);
             var point = new Point(DateTime.Now, author.Id);

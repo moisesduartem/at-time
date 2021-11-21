@@ -17,13 +17,15 @@ import { MePageComponent } from './pages/me-page/me-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RippleModule } from 'primeng/ripple';
 import { HeaderComponent } from './components/header/header.component';
+import { RegisterPointPageComponent } from './pages/points/register-point-page/register-point-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     MePageComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterPointPageComponent
   ],
   imports: [
     BrowserModule,
