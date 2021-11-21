@@ -16,9 +16,7 @@ export class RegisterPointPageComponent implements OnInit {
   ) { }
 
   public ngOnInit(): void {
-    this.pointService.getUserLastPoint().subscribe((response: any) => {
-      this.lastPoint = new Point(response);
-    });
+    this.updateLastPoint();
   }
 
   public get hasLastPoint(): boolean {
@@ -27,6 +25,13 @@ export class RegisterPointPageComponent implements OnInit {
 
   public registerPoint(): void {
     this.pointService.register();
+    window.location.reload();
+  }
+
+  private updateLastPoint() {
+    this.pointService.getUserLastPoint().subscribe((response: any) => {
+      this.lastPoint = new Point(response);
+    });
   }
 
 }
