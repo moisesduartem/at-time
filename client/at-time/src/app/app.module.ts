@@ -1,6 +1,7 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MePageComponent } from './pages/me-page/me-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    RippleModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
