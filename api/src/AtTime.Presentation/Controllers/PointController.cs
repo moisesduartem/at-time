@@ -35,11 +35,30 @@ namespace AtTime.Presentation.Controllers
         [Authorize]
         public async Task<ActionResult<Point>> Register()
         {
-            var author = await _userRepository.GetByName(User.Identity.Name);
+            var author = await GetAuthenticatedUser();
             var point = new Point(DateTime.Now, author.Id);
             await _pointRepository.Add(point);
             
             return Ok(point);
+        }
+        
+        [HttpGet]
+        [Route("last")]
+        [Authorize]
+        public async Task<ActionResult<Point>> GetLastPoint()
+        {
+            var user = await GetAuthenticatedUser();
+            var point = await _pointRepository.GetUserLastPoint(user.Id);
+
+            if (point == null)
+                return NotFound(new { Message = "There are no point history for this user" });
+
+            return Ok(point);
+        }
+
+        private Task<User> GetAuthenticatedUser()
+        {
+            return _userRepository.GetByName(User.Identity.Name);
         }
     }
 }

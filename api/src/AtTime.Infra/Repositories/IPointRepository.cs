@@ -8,5 +8,6 @@ namespace AtTime.Infra.Repositories
     {
         public Task Add(Point point);
         public Task<IEnumerable<Point>> GetByAuthorId(int authorId);
+        public Task<Point> GetUserLastPoint(int userId);
     }
 }

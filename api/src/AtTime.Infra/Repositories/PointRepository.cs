@@ -43,5 +43,13 @@ namespace AtTime.Infra.Repositories
                                          )
                                         .ToListAsync();
         }
+
+        public async Task<Point> GetUserLastPoint(int userId)
+        {
+            return await _context.Points.AsNoTracking()
+                                        .Where(x => x.AuthorId == userId)
+                                        .OrderByDescending(x => x.Time)
+                                        .FirstOrDefaultAsync();
+        }
     }
 }
