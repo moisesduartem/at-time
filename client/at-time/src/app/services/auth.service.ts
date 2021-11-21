@@ -23,13 +23,18 @@ export class AuthService {
     );
   }
 
-  public signIn(body: LoginRequest) {
+  public signIn(body: LoginRequest, callback: () => void) {
     return this.http.post(this.endpoint + '/login', body)
+      .pipe(catchError((error: HttpErrorResponse) => {
+        callback();
+        return this.handleError(error);
+      }))
       .subscribe((response: any) => {
         localStorage.setItem('at-time:token', response.token);
         localStorage.setItem('at-time:user', JSON.stringify(response.user));
         this.router.navigate(['me']);
-      })
+        callback();
+      });
   }
 
   public signOut(): void {

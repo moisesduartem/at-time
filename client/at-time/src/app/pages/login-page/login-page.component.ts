@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPageComponent implements OnInit {
   public signInForm: FormGroup;
+  public isLoading: boolean = false;
   public mustShowPassword: boolean = false;
 
   public constructor(
@@ -26,7 +27,11 @@ export class LoginPageComponent implements OnInit {
   }
 
   public signIn() {
-    this.authService.signIn(this.signInForm.value);
+    this.isLoading = true;
+
+    this.authService.signIn(this.signInForm.value, () => {
+      this.isLoading = false;
+    });
   }
 
   public toggleShowPassword(): void {

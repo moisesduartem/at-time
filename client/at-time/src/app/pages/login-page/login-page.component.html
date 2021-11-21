@@ -12,12 +12,12 @@
                 <p>Password</p>
                 <span class="p-input-icon-right">
                     <i [class]="passwordIconClass" (click)="toggleShowPassword()"></i>
-                    <input [type]="passwordInputType" formControlName="email" pInputText required>
+                    <input [type]="passwordInputType" formControlName="password" pInputText required>
                 </span>
             </div>
 
             <div class="p-mt-3 p-d-flex p-jc-center p-ai-center">
-                <button pButton pRipple type="submit" label="Enter" class="p-button-lg"></button>
+                <button [loading]="isLoading" pButton pRipple type="submit" label="Enter" class="p-button-lg"></button>
             </div>
         </form>
     </p-card>
