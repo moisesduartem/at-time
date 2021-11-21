@@ -5,4 +5,15 @@ export class Point {
     public time!: Date;
     public authorId!: number;
     public author?: User;
+
+    public constructor(data: any = {}) {
+        this.id = data.id;
+        this.time = new Date(data.time);
+        this.authorId = data.authorId;
+        this.author = data.author;
+    }
+
+    public toString() {
+        return this.time.toLocaleString();
+    }
 }

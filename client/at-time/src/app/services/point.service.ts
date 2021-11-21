@@ -15,4 +15,8 @@ export class PointService {
   public register() {
     return this.http.post(this.endpoint, {}).subscribe();
   }
+
+  public getUserLastPoint() {
+    return this.http.get(`${this.endpoint}/last`);
+  }
 }

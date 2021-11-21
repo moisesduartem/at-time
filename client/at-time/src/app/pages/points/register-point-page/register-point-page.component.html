@@ -1,5 +1,8 @@
 <div>
     <p-card header="Register Point" styleClass="p-card-shadow">
+        <div class="p-field" *ngIf="hasLastPoint">
+            <span>Last Register: <strong>{{ lastPoint }}</strong></span>
+        </div>
         <button pButton icon="pi pi-calendar-plus" (click)="registerPoint()"></button>
     </p-card>
 </div>
