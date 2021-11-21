@@ -1,5 +1,7 @@
 <div>
-    <h3>Who am I?</h3>
-    <div>Name: {{ user?.fullName }}</div>
-    <div>Email: {{ user?.email }}</div>
+    <p-card header="My Profile" styleClass="p-card-shadow">
+        <p>Id: <strong>{{ user?.id }}</strong></p>
+        <p>Name: <strong>{{ user?.fullName }}</strong></p>
+        <p>Email: <strong>{{ user?.email }}</strong></p>
+    </p-card>
 </div>

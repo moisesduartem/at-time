@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-me-page',
@@ -7,12 +8,37 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./me-page.component.scss']
 })
 export class MePageComponent implements OnInit {
+  public items!: MenuItem[];
 
-  constructor(
+  public constructor(
     private authService: AuthService
   ) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.items = [
+      {
+        label: 'File',
+        items: [{
+          label: 'New',
+          icon: 'pi pi-fw pi-plus',
+          items: [
+            { label: 'Project' },
+            { label: 'Other' },
+          ]
+        },
+        { label: 'Open' },
+        { label: 'Quit' }
+        ]
+      },
+      {
+        label: 'Edit',
+        icon: 'pi pi-fw pi-pencil',
+        items: [
+          { label: 'Delete', icon: 'pi pi-fw pi-trash' },
+          { label: 'Refresh', icon: 'pi pi-fw pi-refresh' }
+        ]
+      }
+    ];
   }
 
   public get user() {

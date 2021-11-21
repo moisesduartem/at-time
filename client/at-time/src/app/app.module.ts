@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { MenubarModule } from 'primeng/menubar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
@@ -15,12 +16,14 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MePageComponent } from './pages/me-page/me-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RippleModule } from 'primeng/ripple';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    MePageComponent
+    MePageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { RippleModule } from 'primeng/ripple';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MenubarModule,
     InputTextModule,
     ButtonModule,
     CardModule

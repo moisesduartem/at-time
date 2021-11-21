@@ -20,8 +20,4 @@ export class AppComponent implements OnInit {
   public get isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
-
-  public logout(): void {
-    this.authService.signOut();
-  }
 }
