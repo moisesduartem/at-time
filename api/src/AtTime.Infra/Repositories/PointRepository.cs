@@ -1,6 +1,7 @@
 ﻿using AtTime.Core.Models;
 using AtTime.Infra.Database;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +21,13 @@ namespace AtTime.Infra.Repositories
         {
             _context.Points.Add(point);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Point>> GetFromToday(int userId)
+        {
+            return await _context.Points.AsNoTracking()
+                                        .Where(x => x.AuthorId == userId && x.Time.Date == DateTime.Today)
+                                        .ToListAsync();
         }
 
         public async Task<IEnumerable<Point>> GetByAuthorId(int authorId)

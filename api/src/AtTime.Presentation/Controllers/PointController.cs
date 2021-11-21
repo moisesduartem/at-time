@@ -30,16 +30,16 @@ namespace AtTime.Presentation.Controllers
                 await _pointRepository.GetByAuthorId(authorId)
             );
         }
-
-        [HttpPost]
+        
+        [HttpGet]
+        [Route("today")]
         [Authorize]
-        public async Task<ActionResult<Point>> Register()
+        public async Task<ActionResult<IEnumerable<Point>>> GetFromToday()
         {
-            var author = await GetAuthenticatedUser();
-            var point = new Point(DateTime.Now, author.Id);
-            await _pointRepository.Add(point);
-            
-            return Ok(point);
+            var user = await GetAuthenticatedUser();
+            var points = await _pointRepository.GetFromToday(user.Id);
+
+            return Ok(points);
         }
         
         [HttpGet]
@@ -52,6 +52,17 @@ namespace AtTime.Presentation.Controllers
 
             if (point == null)
                 return NotFound(new { Message = "There are no point history for this user" });
+
+            return Ok(point);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<ActionResult<Point>> Register()
+        {
+            var author = await GetAuthenticatedUser();
+            var point = new Point(DateTime.Now, author.Id);
+            await _pointRepository.Add(point);
 
             return Ok(point);
         }
